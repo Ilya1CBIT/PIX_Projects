@@ -1,0 +1,4 @@
+InvoiceNumber,Item,Date,Amount,Tax,Total,Currency
+257203,"Beverages and Catering",2017-11-16,139866,27973.2,167839,CAD
+354332,"Professional Services",2017-11-01,160152,32030.4,192182,RON
+407502,"Beverages and Catering",2017-11-27,26291,5258.2,31549.2,RON

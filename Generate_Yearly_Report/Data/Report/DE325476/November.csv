@@ -1,0 +1,5 @@
+InvoiceNumber,Item,Amount,Tax,Total,Currency,Date
+891591,"Professional Services",27422,5484.4,32906.4,CAD,2017-11-14
+899091,"Concierge Services",8337,1667.4,10004.4,CAD,2017-11-25
+739424,"IT Support",269977,53995.4,323972,RON,2017-11-03
+265462,"Concierge Services",24528,4905.6,29433.6,RON,2017-11-18
