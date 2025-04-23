@@ -265,7 +265,7 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Цикл удаления файлов</Text>
         <_activityFullName>BR.Core.Base.LoopForEach</_activityFullName>
       </AbstractStep>
       <AbstractStep z:Id="i29" i:type="ExecutedStep">
@@ -411,21 +411,31 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
+              <PropertyValue z:Id="i45">
+                <PropertyName>SheetName</PropertyName>
+                <_dataType>Value</_dataType>
+                <_expression i:nil="true" />
+                <_screenShotBase64 i:nil="true" />
+                <_value xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.Core.CustomProperty" i:type="d9p1:ExcelSheetSelector">
+                  <d9p1:_value>Лист1</d9p1:_value>
+                </_value>
+                <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
+              </PropertyValue>
             </PropertyValues>
             <SelectedOptionId i:nil="true" />
             <AutoCloseMode>None</AutoCloseMode>
             <EnableStatus>true</EnableStatus>
             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
             <RetryCount>-1</RetryCount>
-            <Text></Text>
+            <Text>Прочитать диапазон ячеек в текущем файле</Text>
             <_activityFullName>Activities.Office.Excel.ReadRange</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i45" i:type="ExecutedStep">
+          <AbstractStep z:Id="i46" i:type="ExecutedStep">
             <Childs />
             <Id>2348cbf2-cff1-420a-a0e7-7e1ab7bd5090</Id>
             <Parent z:Ref="i38" />
             <PropertyValues>
-              <PropertyValue z:Id="i46">
+              <PropertyValue z:Id="i47">
                 <PropertyName>Value</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>dt_Current.AsEnumerable()
@@ -435,7 +445,7 @@
                 <_value i:nil="true" />
                 <_xpathSettings xmlns:d9p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
               </PropertyValue>
-              <PropertyValue z:Id="i47">
+              <PropertyValue z:Id="i48">
                 <PropertyName>To</PropertyName>
                 <_dataType>Expression</_dataType>
                 <_expression>dt_Current</_expression>
@@ -449,19 +459,19 @@
             <EnableStatus>true</EnableStatus>
             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
             <RetryCount>-1</RetryCount>
-            <Text></Text>
+            <Text>Удаление пустых строк и пробелов</Text>
             <_activityFullName>BR.Core.Base.Assign</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i48" i:type="ExecutedStep">
+          <AbstractStep z:Id="i49" i:type="ExecutedStep">
             <Childs>
-              <AbstractStep z:Id="i49" i:type="ExecutedStep">
+              <AbstractStep z:Id="i50" i:type="ExecutedStep">
                 <Childs>
-                  <AbstractStep z:Id="i50" i:type="ExecutedStep">
+                  <AbstractStep z:Id="i51" i:type="ExecutedStep">
                     <Childs />
                     <Id>74a8561e-855c-475b-89cb-226dbcbb8d21</Id>
-                    <Parent z:Ref="i49" />
+                    <Parent z:Ref="i50" />
                     <PropertyValues>
-                      <PropertyValue z:Id="i51">
+                      <PropertyValue z:Id="i52">
                         <PropertyName>Value</PropertyName>
                         <_dataType>Expression</_dataType>
                         <_expression>dt_Current.AsEnumerable()
@@ -478,7 +488,7 @@
                         <_value i:nil="true" />
                         <_xpathSettings xmlns:d13p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                       </PropertyValue>
-                      <PropertyValue z:Id="i52">
+                      <PropertyValue z:Id="i53">
                         <PropertyName>To</PropertyName>
                         <_dataType>Expression</_dataType>
                         <_expression>dt_Filtered</_expression>
@@ -492,12 +502,12 @@
                     <EnableStatus>true</EnableStatus>
                     <ExceptionHandlingMode>Default</ExceptionHandlingMode>
                     <RetryCount>-1</RetryCount>
-                    <Text></Text>
+                    <Text>Фильтр по 2021 году</Text>
                     <_activityFullName>BR.Core.Base.Assign</_activityFullName>
                   </AbstractStep>
                 </Childs>
                 <Id>71bc454b-8c51-4660-bce3-49190d34eb3c</Id>
-                <Parent z:Ref="i48" />
+                <Parent z:Ref="i49" />
                 <PropertyValues />
                 <SelectedOptionId i:nil="true" />
                 <AutoCloseMode>None</AutoCloseMode>
@@ -507,14 +517,14 @@
                 <Text></Text>
                 <_activityFullName>BR.Core.Base.Try</_activityFullName>
               </AbstractStep>
-              <AbstractStep z:Id="i53" i:type="ExecutedStep">
+              <AbstractStep z:Id="i54" i:type="ExecutedStep">
                 <Childs>
-                  <AbstractStep z:Id="i54" i:type="ExecutedStep">
+                  <AbstractStep z:Id="i55" i:type="ExecutedStep">
                     <Childs />
                     <Id>7635798f-7329-4e6b-b32f-dbe36289ec6e</Id>
-                    <Parent z:Ref="i53" />
+                    <Parent z:Ref="i54" />
                     <PropertyValues>
-                      <PropertyValue z:Id="i55">
+                      <PropertyValue z:Id="i56">
                         <PropertyName>Text</PropertyName>
                         <_dataType>Expression</_dataType>
                         <_expression>"Нет строк с годом 2021"</_expression>
@@ -531,10 +541,10 @@
                     <Text></Text>
                     <_activityFullName>BR.Core.Base.WriteLog</_activityFullName>
                   </AbstractStep>
-                  <AbstractStep z:Id="i56" i:type="ExecutedStep">
+                  <AbstractStep z:Id="i57" i:type="ExecutedStep">
                     <Childs />
                     <Id>5ec449e4-e8b7-404d-8786-acbde8ec0078</Id>
-                    <Parent z:Ref="i53" />
+                    <Parent z:Ref="i54" />
                     <PropertyValues />
                     <SelectedOptionId i:nil="true" />
                     <AutoCloseMode>None</AutoCloseMode>
@@ -546,7 +556,7 @@
                   </AbstractStep>
                 </Childs>
                 <Id>f35d23b3-7e5e-4e72-97c8-fa36be3f33ce</Id>
-                <Parent z:Ref="i48" />
+                <Parent z:Ref="i49" />
                 <PropertyValues />
                 <SelectedOptionId i:nil="true" />
                 <AutoCloseMode>None</AutoCloseMode>
@@ -556,10 +566,10 @@
                 <Text></Text>
                 <_activityFullName>BR.Core.Base.Catch</_activityFullName>
               </AbstractStep>
-              <AbstractStep z:Id="i57" i:type="ExecutedStep">
+              <AbstractStep z:Id="i58" i:type="ExecutedStep">
                 <Childs />
                 <Id>1ed5c4a9-56fc-4a04-83ad-3ce5bff78311</Id>
-                <Parent z:Ref="i48" />
+                <Parent z:Ref="i49" />
                 <PropertyValues />
                 <SelectedOptionId i:nil="true" />
                 <AutoCloseMode>None</AutoCloseMode>
@@ -578,17 +588,17 @@
             <EnableStatus>true</EnableStatus>
             <ExceptionHandlingMode>Default</ExceptionHandlingMode>
             <RetryCount>-1</RetryCount>
-            <Text></Text>
+            <Text>Try/Catch/Finally Фильтр по 2021 году</Text>
             <_activityFullName>BR.Core.Base.TryCatch</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i58" i:type="ExecutedStep">
+          <AbstractStep z:Id="i59" i:type="ExecutedStep">
             <Childs>
-              <AbstractStep z:Id="i59" i:type="ExecutedStep">
+              <AbstractStep z:Id="i60" i:type="ExecutedStep">
                 <Childs />
                 <Id>3c8dcd23-2087-4fbf-b396-a137c38e1ac5</Id>
-                <Parent z:Ref="i58" />
+                <Parent z:Ref="i59" />
                 <PropertyValues>
-                  <PropertyValue z:Id="i60">
+                  <PropertyValue z:Id="i61">
                     <PropertyName>Value</PropertyName>
                     <_dataType>Expression</_dataType>
                     <_expression>dt_Filtered.AsEnumerable()
@@ -598,7 +608,7 @@
                     <_value i:nil="true" />
                     <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                   </PropertyValue>
-                  <PropertyValue z:Id="i61">
+                  <PropertyValue z:Id="i62">
                     <PropertyName>To</PropertyName>
                     <_dataType>Expression</_dataType>
                     <_expression>dt_Enrolled</_expression>
@@ -612,15 +622,15 @@
                 <EnableStatus>true</EnableStatus>
                 <ExceptionHandlingMode>Default</ExceptionHandlingMode>
                 <RetryCount>-1</RetryCount>
-                <Text></Text>
+                <Text>Фильтр по зачисленным студентам</Text>
                 <_activityFullName>BR.Core.Base.Assign</_activityFullName>
               </AbstractStep>
-              <AbstractStep z:Id="i62" i:type="ExecutedStep">
+              <AbstractStep z:Id="i63" i:type="ExecutedStep">
                 <Childs />
                 <Id>62d17454-74bc-47e7-a03d-5323eb9335b3</Id>
-                <Parent z:Ref="i58" />
+                <Parent z:Ref="i59" />
                 <PropertyValues>
-                  <PropertyValue z:Id="i63">
+                  <PropertyValue z:Id="i64">
                     <PropertyName>SourceDataTable</PropertyName>
                     <_dataType>Expression</_dataType>
                     <_expression>dt_Enrolled</_expression>
@@ -628,7 +638,7 @@
                     <_value i:nil="true" />
                     <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                   </PropertyValue>
-                  <PropertyValue z:Id="i64">
+                  <PropertyValue z:Id="i65">
                     <PropertyName>MissingSchemaAction</PropertyName>
                     <_dataType>Value</_dataType>
                     <_expression i:nil="true" />
@@ -636,7 +646,7 @@
                     <_value xmlns:d11p1="http://schemas.datacontract.org/2004/07/System.Data" i:type="d11p1:MissingSchemaAction">Add</_value>
                     <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                   </PropertyValue>
-                  <PropertyValue z:Id="i65">
+                  <PropertyValue z:Id="i66">
                     <PropertyName>Result</PropertyName>
                     <_dataType>Expression</_dataType>
                     <_expression>dt_AllEnrolled</_expression>
@@ -644,7 +654,7 @@
                     <_value i:nil="true" />
                     <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                   </PropertyValue>
-                  <PropertyValue z:Id="i66">
+                  <PropertyValue z:Id="i67">
                     <PropertyName>BaseDataTable</PropertyName>
                     <_dataType>Expression</_dataType>
                     <_expression>dt_AllEnrolled</_expression>
@@ -661,98 +671,6 @@
                 <Text></Text>
                 <_activityFullName>Activities.BaseCollections.DT.MergeTables</_activityFullName>
               </AbstractStep>
-              <AbstractStep z:Id="i67" i:type="ExecutedStep">
-                <Childs>
-                  <AbstractStep z:Id="i68" i:type="ExecutedStep">
-                    <Childs />
-                    <Id>5bd2cd79-da29-42cc-97cd-71d62bd4cb90</Id>
-                    <Parent z:Ref="i67" />
-                    <PropertyValues>
-                      <PropertyValue z:Id="i69">
-                        <PropertyName>Value</PropertyName>
-                        <_dataType>Expression</_dataType>
-                        <_expression>dt_Filtered.AsEnumerable()
-    .Where(row =&gt; row["Ссылка на приказ"].ToString().ToLower().Contains("зачисл"))
-    .CopyToDataTable();</_expression>
-                        <_screenShotBase64 i:nil="true" />
-                        <_value i:nil="true" />
-                        <_xpathSettings xmlns:d13p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                      </PropertyValue>
-                      <PropertyValue z:Id="i70">
-                        <PropertyName>To</PropertyName>
-                        <_dataType>Expression</_dataType>
-                        <_expression>dt_Enrolled</_expression>
-                        <_screenShotBase64 i:nil="true" />
-                        <_value i:nil="true" />
-                        <_xpathSettings xmlns:d13p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                      </PropertyValue>
-                    </PropertyValues>
-                    <SelectedOptionId i:nil="true" />
-                    <AutoCloseMode>None</AutoCloseMode>
-                    <EnableStatus>true</EnableStatus>
-                    <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-                    <RetryCount>-1</RetryCount>
-                    <Text></Text>
-                    <_activityFullName>BR.Core.Base.Assign</_activityFullName>
-                  </AbstractStep>
-                  <AbstractStep z:Id="i71" i:type="ExecutedStep">
-                    <Childs />
-                    <Id>5626ce92-7745-46ba-8303-564f3157a1ff</Id>
-                    <Parent z:Ref="i67" />
-                    <PropertyValues>
-                      <PropertyValue z:Id="i72">
-                        <PropertyName>SourceDataTable</PropertyName>
-                        <_dataType>Expression</_dataType>
-                        <_expression>dt_Enrolled</_expression>
-                        <_screenShotBase64 i:nil="true" />
-                        <_value i:nil="true" />
-                        <_xpathSettings xmlns:d13p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                      </PropertyValue>
-                      <PropertyValue z:Id="i73">
-                        <PropertyName>MissingSchemaAction</PropertyName>
-                        <_dataType>Value</_dataType>
-                        <_expression i:nil="true" />
-                        <_screenShotBase64 i:nil="true" />
-                        <_value xmlns:d13p1="http://schemas.datacontract.org/2004/07/System.Data" i:type="d13p1:MissingSchemaAction">Add</_value>
-                        <_xpathSettings xmlns:d13p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                      </PropertyValue>
-                      <PropertyValue z:Id="i74">
-                        <PropertyName>Result</PropertyName>
-                        <_dataType>Expression</_dataType>
-                        <_expression>dt_AllEnrolled</_expression>
-                        <_screenShotBase64 i:nil="true" />
-                        <_value i:nil="true" />
-                        <_xpathSettings xmlns:d13p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                      </PropertyValue>
-                      <PropertyValue z:Id="i75">
-                        <PropertyName>BaseDataTable</PropertyName>
-                        <_dataType>Expression</_dataType>
-                        <_expression>dt_AllEnrolled</_expression>
-                        <_screenShotBase64 i:nil="true" />
-                        <_value i:nil="true" />
-                        <_xpathSettings xmlns:d13p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-                      </PropertyValue>
-                    </PropertyValues>
-                    <SelectedOptionId i:nil="true" />
-                    <AutoCloseMode>None</AutoCloseMode>
-                    <EnableStatus>true</EnableStatus>
-                    <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-                    <RetryCount>-1</RetryCount>
-                    <Text></Text>
-                    <_activityFullName>Activities.BaseCollections.DT.MergeTables</_activityFullName>
-                  </AbstractStep>
-                </Childs>
-                <Id>7340cb45-6b58-45c5-8298-2d22ddf32798</Id>
-                <Parent z:Ref="i58" />
-                <PropertyValues />
-                <SelectedOptionId i:nil="true" />
-                <AutoCloseMode>None</AutoCloseMode>
-                <EnableStatus>true</EnableStatus>
-                <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-                <RetryCount>-1</RetryCount>
-                <Text>Filter Enrolled</Text>
-                <_activityFullName>BR.Core.Base.Container</_activityFullName>
-              </AbstractStep>
             </Childs>
             <Id>a486c723-d425-4232-86ee-df5f8f608ca6</Id>
             <Parent z:Ref="i38" />
@@ -765,18 +683,18 @@
             <Text>Filter Enrolled</Text>
             <_activityFullName>BR.Core.Base.Container</_activityFullName>
           </AbstractStep>
-          <AbstractStep z:Id="i76" i:type="ExecutedStep">
+          <AbstractStep z:Id="i68" i:type="ExecutedStep">
             <Childs>
-              <AbstractStep z:Id="i77" i:type="ExecutedStep">
+              <AbstractStep z:Id="i69" i:type="ExecutedStep">
                 <Childs>
-                  <AbstractStep z:Id="i78" i:type="ExecutedStep">
+                  <AbstractStep z:Id="i70" i:type="ExecutedStep">
                     <Childs>
-                      <AbstractStep z:Id="i79" i:type="ExecutedStep">
+                      <AbstractStep z:Id="i71" i:type="ExecutedStep">
                         <Childs />
                         <Id>433ae455-9e51-4740-9164-61b4f6a8a044</Id>
-                        <Parent z:Ref="i78" />
+                        <Parent z:Ref="i70" />
                         <PropertyValues>
-                          <PropertyValue z:Id="i80">
+                          <PropertyValue z:Id="i72">
                             <PropertyName>Value</PropertyName>
                             <_dataType>Expression</_dataType>
                             <_expression>dt_Filtered.AsEnumerable()
@@ -789,7 +707,7 @@
                             <_value i:nil="true" />
                             <_xpathSettings xmlns:d15p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                           </PropertyValue>
-                          <PropertyValue z:Id="i81">
+                          <PropertyValue z:Id="i73">
                             <PropertyName>To</PropertyName>
                             <_dataType>Expression</_dataType>
                             <_expression>dt_Expelled</_expression>
@@ -803,12 +721,12 @@
                         <EnableStatus>true</EnableStatus>
                         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
                         <RetryCount>-1</RetryCount>
-                        <Text></Text>
+                        <Text>Фильтр по отчисленным студентам</Text>
                         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
                       </AbstractStep>
                     </Childs>
                     <Id>3aed0fc7-b369-4304-ab8f-e5c5c063676d</Id>
-                    <Parent z:Ref="i77" />
+                    <Parent z:Ref="i69" />
                     <PropertyValues />
                     <SelectedOptionId i:nil="true" />
                     <AutoCloseMode>None</AutoCloseMode>
@@ -818,14 +736,14 @@
                     <Text></Text>
                     <_activityFullName>BR.Core.Base.Try</_activityFullName>
                   </AbstractStep>
-                  <AbstractStep z:Id="i82" i:type="ExecutedStep">
+                  <AbstractStep z:Id="i74" i:type="ExecutedStep">
                     <Childs>
-                      <AbstractStep z:Id="i83" i:type="ExecutedStep">
+                      <AbstractStep z:Id="i75" i:type="ExecutedStep">
                         <Childs />
                         <Id>f160b766-8446-4d81-87f1-128773d5e445</Id>
-                        <Parent z:Ref="i82" />
+                        <Parent z:Ref="i74" />
                         <PropertyValues>
-                          <PropertyValue z:Id="i84">
+                          <PropertyValue z:Id="i76">
                             <PropertyName>Level</PropertyName>
                             <_dataType>Value</_dataType>
                             <_expression i:nil="true" />
@@ -833,7 +751,7 @@
                             <_value xmlns:d15p1="http://schemas.datacontract.org/2004/07/BR.Core.Base" i:type="d15p1:LogLevel">Warn</_value>
                             <_xpathSettings xmlns:d15p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                           </PropertyValue>
-                          <PropertyValue z:Id="i85">
+                          <PropertyValue z:Id="i77">
                             <PropertyName>Text</PropertyName>
                             <_dataType>Expression</_dataType>
                             <_expression>"Нет строк с типом приказа 'Отчисление' в файле: " + CurrentFile</_expression>
@@ -850,10 +768,10 @@
                         <Text></Text>
                         <_activityFullName>BR.Core.Base.WriteLog</_activityFullName>
                       </AbstractStep>
-                      <AbstractStep z:Id="i86" i:type="ExecutedStep">
+                      <AbstractStep z:Id="i78" i:type="ExecutedStep">
                         <Childs />
                         <Id>63d3bbf0-817d-49bc-8b2a-55f0eb264097</Id>
-                        <Parent z:Ref="i82" />
+                        <Parent z:Ref="i74" />
                         <PropertyValues />
                         <SelectedOptionId i:nil="true" />
                         <AutoCloseMode>None</AutoCloseMode>
@@ -865,7 +783,7 @@
                       </AbstractStep>
                     </Childs>
                     <Id>13c8c727-e795-4c14-9c4f-10f0db03e87d</Id>
-                    <Parent z:Ref="i77" />
+                    <Parent z:Ref="i69" />
                     <PropertyValues />
                     <SelectedOptionId i:nil="true" />
                     <AutoCloseMode>None</AutoCloseMode>
@@ -875,10 +793,10 @@
                     <Text></Text>
                     <_activityFullName>BR.Core.Base.Catch</_activityFullName>
                   </AbstractStep>
-                  <AbstractStep z:Id="i87" i:type="ExecutedStep">
+                  <AbstractStep z:Id="i79" i:type="ExecutedStep">
                     <Childs />
                     <Id>acafb937-8922-4f49-a96e-f000f2fe0d1d</Id>
-                    <Parent z:Ref="i77" />
+                    <Parent z:Ref="i69" />
                     <PropertyValues />
                     <SelectedOptionId i:nil="true" />
                     <AutoCloseMode>None</AutoCloseMode>
@@ -890,7 +808,7 @@
                   </AbstractStep>
                 </Childs>
                 <Id>6483eb87-86db-4bcc-9060-425642e52564</Id>
-                <Parent z:Ref="i76" />
+                <Parent z:Ref="i68" />
                 <PropertyValues />
                 <SelectedOptionId i:nil="true" />
                 <AutoCloseMode>None</AutoCloseMode>
@@ -900,12 +818,12 @@
                 <Text></Text>
                 <_activityFullName>BR.Core.Base.TryCatch</_activityFullName>
               </AbstractStep>
-              <AbstractStep z:Id="i88" i:type="ExecutedStep">
+              <AbstractStep z:Id="i80" i:type="ExecutedStep">
                 <Childs />
                 <Id>555af674-7077-4f51-b688-0ac9cd895d9d</Id>
-                <Parent z:Ref="i76" />
+                <Parent z:Ref="i68" />
                 <PropertyValues>
-                  <PropertyValue z:Id="i89">
+                  <PropertyValue z:Id="i81">
                     <PropertyName>SourceDataTable</PropertyName>
                     <_dataType>Expression</_dataType>
                     <_expression>dt_AllExpelled</_expression>
@@ -913,7 +831,7 @@
                     <_value i:nil="true" />
                     <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                   </PropertyValue>
-                  <PropertyValue z:Id="i90">
+                  <PropertyValue z:Id="i82">
                     <PropertyName>MissingSchemaAction</PropertyName>
                     <_dataType>Value</_dataType>
                     <_expression i:nil="true" />
@@ -921,7 +839,7 @@
                     <_value xmlns:d11p1="http://schemas.datacontract.org/2004/07/System.Data" i:type="d11p1:MissingSchemaAction">Add</_value>
                     <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                   </PropertyValue>
-                  <PropertyValue z:Id="i91">
+                  <PropertyValue z:Id="i83">
                     <PropertyName>Result</PropertyName>
                     <_dataType>Expression</_dataType>
                     <_expression>dt_AllExpelled</_expression>
@@ -929,7 +847,7 @@
                     <_value i:nil="true" />
                     <_xpathSettings xmlns:d11p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
                   </PropertyValue>
-                  <PropertyValue z:Id="i92">
+                  <PropertyValue z:Id="i84">
                     <PropertyName>BaseDataTable</PropertyName>
                     <_dataType>Expression</_dataType>
                     <_expression>dt_Expelled</_expression>
@@ -962,7 +880,7 @@
         <Id>6a445fa1-9b8d-4cd6-b167-67d2951db249</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i93">
+          <PropertyValue z:Id="i85">
             <PropertyName>Collection</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>files</_expression>
@@ -970,7 +888,7 @@
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i94">
+          <PropertyValue z:Id="i86">
             <PropertyName>Iterator</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>CurrentFile</_expression>
@@ -978,7 +896,7 @@
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i95">
+          <PropertyValue z:Id="i87">
             <PropertyName>Counter</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression></_expression>
@@ -992,15 +910,15 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Цикл обработки каждого файла</Text>
         <_activityFullName>BR.Core.Base.LoopForEach</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i96" i:type="ExecutedStep">
+      <AbstractStep z:Id="i88" i:type="ExecutedStep">
         <Childs />
         <Id>9dea8cfa-ca2e-4d80-85ad-b34d479c7cf2</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i97">
+          <PropertyValue z:Id="i89">
             <PropertyName>Value</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>dt_AllEnrolled.AsEnumerable()
@@ -1018,7 +936,7 @@
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i98">
+          <PropertyValue z:Id="i90">
             <PropertyName>To</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>dt_AllEnrolled</_expression>
@@ -1032,15 +950,15 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text>delete duplicates</Text>
+        <Text>Удаление дубликатов строк</Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i99" i:type="ExecutedStep">
+      <AbstractStep z:Id="i91" i:type="ExecutedStep">
         <Childs />
         <Id>22ff7ac0-a680-42a9-b72d-7724787bdc46</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i100">
+          <PropertyValue z:Id="i92">
             <PropertyName>Value</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>dt_AllEnrolled.AsEnumerable()
@@ -1056,7 +974,7 @@
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i101">
+          <PropertyValue z:Id="i93">
             <PropertyName>To</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>enrolledKeys</_expression>
@@ -1073,50 +991,12 @@
         <Text></Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i102" i:type="ExecutedStep">
-        <Childs />
-        <Id>77548643-5b51-4d17-ad3d-db9261cd1e33</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i103">
-            <PropertyName>Value</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>dt_AllExpelled.AsEnumerable()
-    .Select(row =&gt; 
-        row["Программа.Кодификатор"].ToString().Trim() + "|" +
-        row["Поток"].ToString().Trim() + "|" +
-        row["Слушатель.User id"].ToString().Trim() + "|" +
-        row["Юр. Лицо"].ToString().Trim() + "|" +
-        row["Группа SF.Артикул"].ToString().Trim()
-    )
-    .ToList()</_expression>
-            <_screenShotBase64 i:nil="true" />
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-          <PropertyValue z:Id="i104">
-            <PropertyName>To</PropertyName>
-            <_dataType>Expression</_dataType>
-            <_expression>expelledKeys</_expression>
-            <_screenShotBase64 i:nil="true" />
-            <_value i:nil="true" />
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <AutoCloseMode>None</AutoCloseMode>
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text></Text>
-        <_activityFullName>BR.Core.Base.Assign</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i105" i:type="ExecutedStep">
+      <AbstractStep z:Id="i94" i:type="ExecutedStep">
         <Childs />
         <Id>7f53b446-5a3a-4189-a0ea-39eb6476cc99</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i106">
+          <PropertyValue z:Id="i95">
             <PropertyName>Value</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>enrolledKeys
@@ -1128,7 +1008,7 @@
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i107">
+          <PropertyValue z:Id="i96">
             <PropertyName>To</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>duplicatesEnrolled</_expression>
@@ -1142,15 +1022,15 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Поиск дубликатов</Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i108" i:type="ExecutedStep">
+      <AbstractStep z:Id="i97" i:type="ExecutedStep">
         <Childs />
         <Id>4ab8d68a-817c-414e-8c0a-c5c80260d748</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i109">
+          <PropertyValue z:Id="i98">
             <PropertyName>Level</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
@@ -1158,7 +1038,7 @@
             <_value xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.Core.Base" i:type="d7p1:LogLevel">Warn</_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i110">
+          <PropertyValue z:Id="i99">
             <PropertyName>Text</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>"Повторяющихся зачислений: " + duplicatesEnrolled.Count.ToString()</_expression>
@@ -1175,12 +1055,12 @@
         <Text></Text>
         <_activityFullName>BR.Core.Base.WriteLog</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i111" i:type="ExecutedStep">
+      <AbstractStep z:Id="i100" i:type="ExecutedStep">
         <Childs />
         <Id>0e084995-3947-4709-92de-8cbe0256da29</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i112">
+          <PropertyValue z:Id="i101">
             <PropertyName>Text</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>"Всего зачисленных: " + dt_AllEnrolled.Rows.Count.ToString() + " Всего отчисленных: " + dt_AllExpelled.Rows.Count.ToString()</_expression>
@@ -1197,12 +1077,12 @@
         <Text></Text>
         <_activityFullName>BR.Core.Base.WriteLog</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i113" i:type="ExecutedStep">
+      <AbstractStep z:Id="i102" i:type="ExecutedStep">
         <Childs />
         <Id>0953a26e-40d3-4505-a171-0c70fbc822e4</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i114">
+          <PropertyValue z:Id="i103">
             <PropertyName>Value</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>dt_AllEnrolled.AsEnumerable()
@@ -1218,7 +1098,7 @@
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i115">
+          <PropertyValue z:Id="i104">
             <PropertyName>To</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>dt_Final</_expression>
@@ -1232,15 +1112,15 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Присвоить значение финальной таблицы</Text>
         <_activityFullName>BR.Core.Base.Assign</_activityFullName>
       </AbstractStep>
-      <AbstractStep z:Id="i116" i:type="ExecutedStep">
+      <AbstractStep z:Id="i105" i:type="ExecutedStep">
         <Childs />
         <Id>333070e4-d89f-4b70-9ba0-c245936a302f</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
-          <PropertyValue z:Id="i117">
+          <PropertyValue z:Id="i106">
             <PropertyName>DataTable</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>dt_Final</_expression>
@@ -1248,7 +1128,7 @@
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i118">
+          <PropertyValue z:Id="i107">
             <PropertyName>SheetName</PropertyName>
             <_dataType>Value</_dataType>
             <_expression i:nil="true" />
@@ -1258,7 +1138,7 @@
             </_value>
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
           </PropertyValue>
-          <PropertyValue z:Id="i119">
+          <PropertyValue z:Id="i108">
             <PropertyName>FileName</PropertyName>
             <_dataType>Expression</_dataType>
             <_expression>"Result.xlsx"</_expression>
@@ -1272,7 +1152,7 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Записать в диапазон ячеек финальную таблицу</Text>
         <_activityFullName>Activities.Office.Excel.WriteRange</_activityFullName>
       </AbstractStep>
     </Childs>
@@ -1298,85 +1178,79 @@
   </PlatformVersion>
   <TemplateVersion xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" i:nil="true" />
   <Variables xmlns:d2p1="http://schemas.datacontract.org/2004/07/BR.Logic.Params">
-    <d2p1:Variable z:Id="i120">
+    <d2p1:Variable z:Id="i109">
       <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
       <d2p1:Description></d2p1:Description>
       <d2p1:Name>dt_Filtered</d2p1:Name>
       <d2p1:TypeString>System.Data.DataTable</d2p1:TypeString>
     </d2p1:Variable>
-    <d2p1:Variable z:Id="i121">
+    <d2p1:Variable z:Id="i110">
       <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
       <d2p1:Description></d2p1:Description>
       <d2p1:Name>dt_AllEnrolled</d2p1:Name>
       <d2p1:TypeString>System.Data.DataTable</d2p1:TypeString>
     </d2p1:Variable>
-    <d2p1:Variable z:Id="i122">
+    <d2p1:Variable z:Id="i111">
       <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
       <d2p1:Description></d2p1:Description>
       <d2p1:Name>dt_AllExpelled</d2p1:Name>
       <d2p1:TypeString>System.Data.DataTable</d2p1:TypeString>
     </d2p1:Variable>
-    <d2p1:Variable z:Id="i123">
+    <d2p1:Variable z:Id="i112">
       <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
       <d2p1:Description></d2p1:Description>
       <d2p1:Name>dt_Expelled</d2p1:Name>
       <d2p1:TypeString>System.Data.DataTable</d2p1:TypeString>
     </d2p1:Variable>
-    <d2p1:Variable z:Id="i124">
+    <d2p1:Variable z:Id="i113">
       <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
       <d2p1:Description></d2p1:Description>
       <d2p1:Name>dt_Enrolled</d2p1:Name>
       <d2p1:TypeString>System.Data.DataTable</d2p1:TypeString>
     </d2p1:Variable>
-    <d2p1:Variable z:Id="i125">
+    <d2p1:Variable z:Id="i114">
       <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
       <d2p1:Description></d2p1:Description>
       <d2p1:Name>dt_Current</d2p1:Name>
       <d2p1:TypeString>System.Data.DataTable</d2p1:TypeString>
     </d2p1:Variable>
-    <d2p1:Variable z:Id="i126">
+    <d2p1:Variable z:Id="i115">
       <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
       <d2p1:Description></d2p1:Description>
       <d2p1:Name>dt_Final</d2p1:Name>
       <d2p1:TypeString>System.Data.DataTable</d2p1:TypeString>
     </d2p1:Variable>
-    <d2p1:Variable z:Id="i127">
+    <d2p1:Variable z:Id="i116">
       <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
       <d2p1:Description></d2p1:Description>
       <d2p1:Name>expelledKeys</d2p1:Name>
       <d2p1:TypeString>System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</d2p1:TypeString>
     </d2p1:Variable>
-    <d2p1:Variable z:Id="i128">
+    <d2p1:Variable z:Id="i117">
       <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
       <d2p1:Description></d2p1:Description>
       <d2p1:Name>enrolledKeys</d2p1:Name>
       <d2p1:TypeString>System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</d2p1:TypeString>
     </d2p1:Variable>
-    <d2p1:Variable z:Id="i129">
-      <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
-      <d2p1:Description></d2p1:Description>
-      <d2p1:Name>commonKeys</d2p1:Name>
-      <d2p1:TypeString>System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</d2p1:TypeString>
-    </d2p1:Variable>
-    <d2p1:Variable z:Id="i130">
+    <d2p1:Variable z:Id="i118">
       <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
       <d2p1:Description></d2p1:Description>
       <d2p1:Name>duplicatesEnrolled</d2p1:Name>
       <d2p1:TypeString>System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</d2p1:TypeString>
     </d2p1:Variable>
-    <d2p1:Variable z:Id="i131">
+    <d2p1:Variable z:Id="i119">
       <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
       <d2p1:Description></d2p1:Description>
       <d2p1:Name>lst_Matches</d2p1:Name>
       <d2p1:TypeString>System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</d2p1:TypeString>
     </d2p1:Variable>
-    <d2p1:Variable z:Id="i132">
+    <d2p1:Variable z:Id="i120">
       <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
       <d2p1:Description></d2p1:Description>
       <d2p1:Name>files</d2p1:Name>
       <d2p1:TypeString>System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</d2p1:TypeString>
     </d2p1:Variable>
-    <d2p1:Variable z:Id="i133">
+    <d2p1:Variable z:Id="i121">
       <d2p1:DefaultValueExpression>Environment.CurrentDirectory + @"\InputData\Downloads"</d2p1:DefaultValueExpression>
       <d2p1:Description></d2p1:Description>
       <d2p1:Name>FilesDirectory</d2p1:Name>
