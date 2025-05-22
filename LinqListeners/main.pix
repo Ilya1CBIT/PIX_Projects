@@ -928,7 +928,8 @@
         Flow = row["Поток"].ToString().Trim(),
         UserId = row["Слушатель.User id"].ToString().Trim(),
         LegalEntity = row["Юр. Лицо"].ToString().Trim(),
-        SFGroup = row["Группа SF.Артикул"].ToString().Trim()
+        SFGroup = row["Группа SF.Артикул"].ToString().Trim(),
+        Listeners =row["Слушатель"].ToString().Trim()
     })
     .Select(group =&gt; group.First())
     .CopyToDataTable()</_expression>
@@ -967,7 +968,8 @@
         row["Поток"].ToString().Trim() + "|" +
         row["Слушатель.User id"].ToString().Trim() + "|" +
         row["Юр. Лицо"].ToString().Trim() + "|" +
-        row["Группа SF.Артикул"].ToString().Trim()
+        row["Группа SF.Артикул"].ToString().Trim()+ "|" +
+        row["Слушатель"].ToString().Trim()
     )
     .ToList()</_expression>
             <_screenShotBase64 i:nil="true" />
@@ -1091,7 +1093,8 @@
         exp["Поток"].ToString().Trim() == en["Поток"].ToString().Trim() &amp;&amp;
         exp["Слушатель.User id"].ToString().Trim() == en["Слушатель.User id"].ToString().Trim() &amp;&amp;
         exp["Юр. Лицо"].ToString().Trim() == en["Юр. Лицо"].ToString().Trim() &amp;&amp;
-        exp["Группа SF.Артикул"].ToString().Trim() == en["Группа SF.Артикул"].ToString().Trim()
+        exp["Группа SF.Артикул"].ToString().Trim() == en["Группа SF.Артикул"].ToString().Trim() &amp;&amp;
+        exp["Слушатель"].ToString().Trim() == en["Слушатель"].ToString().Trim()
     ))
     .CopyToDataTable()</_expression>
             <_screenShotBase64 i:nil="true" />
